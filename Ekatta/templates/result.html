@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="quiz-card">
+            <h2 class="text-center">Quiz Results</h2>
+            <p class="text-center">You scored {{ score }} out of {{ total }}</p>
+            <div class="results-box">
+                {% for index, question in enumerated_questions %}
+                    <p><strong>Question {{ index + 1 }}:</strong> {{ question['question'] }}</p>
+                    <p>User's Answer: {{ user_answers[index] }}: {{ question['options'][user_answers[index]] }}</p>
+                    <p>Correct Answer: {{ correct_answers[index] }}: {{ question['options'][correct_answers[index]] }}</p>
+                    <hr>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz Again</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Centering the Quiz Card */
+.quiz-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 50px 0;
+}
+
+/* Header Styles */
+h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Question Box Styling */
+.question-box {
+    margin-bottom: 25px;
+}
+
+.question-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.question {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.options {
+    margin-top: 15px;
+}
+
+.option {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #f7f9fc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #e9eff7;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Result Box Styling */
+.results-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .quiz-card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .option {
+        font-size: 14px;
+    }
+}

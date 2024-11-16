@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Additional styling for better spacing */
+        .question-box {
+            margin-bottom: 25px;  /* Space between questions */
+        }
+
+        .question-number {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .question {
+            font-size: 18px;
+            color: #444;
+        }
+
+        .options {
+            margin-top: 15px;
+        }
+
+        .option {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-card">
+            <h2 class="text-center">Quiz</h2>
+            <form method="POST" action="{{ url_for('submit') }}">
+                {% for index, question in enumerated_questions %}
+                    <div class="question-box">
+                        <p class="question-number">Question {{ index + 1 }}:</p>
+                        <p class="question">{{ question['question'] }}</p>
+                        <div class="options">
+                            {% for key, value in question['options'].items() %}
+                                <label class="option">
+                                    <input type="radio" name="question-{{ index }}" value="{{ key }}" required>
+                                    {{ key }}: {{ value }}
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
